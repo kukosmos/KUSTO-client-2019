@@ -70,7 +70,7 @@ const styles = StyleSheet.create({
     justifyContent: "center"
   },
   content: {
-    fontSize: width * 0.05,
+    fontSize: width * 0.04,
     color: "white",
     textShadowColor: "#585858",
     textShadowOffset: { width: 1, height: 1 },

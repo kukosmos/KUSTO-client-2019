@@ -42,7 +42,7 @@ class ResultScreen extends Component {
           }),
         []
       );
-      console.log(recommends);
+
       this.setState({
         loading: false,
         res: recommends
@@ -58,16 +58,17 @@ class ResultScreen extends Component {
   }
 
   render() {
+    const { navigation } = this.props;
     const { loading, res } = this.state;
     return loading ? (
       <View style={styles.load}>
-        <Text style={styles.loadText}>로딩</Text>
+        <Text style={styles.loadText}>로딩 중..</Text>
       </View>
     ) : (
       <View style={styles.container}>
         <ResTitle />
         <ResultList ress={res} />
-        <ResFooter />
+        <ResFooter navigation={navigation} />
       </View>
     );
   }
@@ -78,12 +79,14 @@ const styles = StyleSheet.create({
     flex: 1
   },
   load: {
+    flex: 1,
     alignItems: "center",
-    justifyContent: "center",
-    fontSize: width * 0.05
+    justifyContent: "center"
   },
   loadText: {
-    fontSize: width * 0.05
+    fontSize: width * 0.05,
+    alignItems: "center",
+    justifyContent: "center"
   }
 });
 
