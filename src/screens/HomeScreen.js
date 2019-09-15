@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { StyleSheet, View } from "react-native";
 import { Menu, Title, Select } from "../mainComponent";
 
-const HomeScreen = () => {
+const HomeScreen = ({ navigation }) => {
   const menus = [
     "한식",
     "중식",
@@ -20,7 +20,7 @@ const HomeScreen = () => {
   }));
   const [menuButtons, useMenuButtons] = useState(menuButton);
 
-  const handleClick = i => {
+  const handleMenuPress = i => {
     useMenuButtons(() => {
       const targetMenu = {
         name: menuButton[i].name,
@@ -38,8 +38,8 @@ const HomeScreen = () => {
   return (
     <View style={styles.container}>
       <Title />
-      <Menu menus={menuButtons} onClick={handleClick} />
-      <Select menuButtons={menuButtons} />
+      <Menu menus={menuButtons} onClick={handleMenuPress} />
+      <Select menuButtons={menuButtons} navigation={navigation} />
     </View>
   );
 };

@@ -7,25 +7,31 @@ import {
   TouchableOpacity
 } from "react-native";
 
-const { width, height } = Dimensions.get("window");
+const { width } = Dimensions.get("window");
 
-const Select = ({ menuButtons }) => {
+const Select = ({ menuButtons, navigation }) => {
   const res = menuButtons.reduce((a, b) => a || b.clicked, false);
+  const selectedMenus = menuButtons.filter(menuButton => menuButton.clicked);
+
+  const handleSelectPress = menus =>
+    navigation.navigate("Result", { menus: menus });
+
   return (
     <View style={styles.selectContainer}>
       <View style={styles.textContainer}>
         <Text style={styles.text}>오늘은</Text>
         <Text style={styles.selected}>
           {res
-            ? menuButtons
-                .filter(menuButton => menuButton.clicked)
-                .reduce((a, b) => a + " " + b.name, "")
+            ? selectedMenus.reduce((a, b) => a + " " + b.name, "")
             : "아무것도 안..."}
         </Text>
         <Text style={styles.text}>먹고싶다!</Text>
       </View>
-      <View style={res ? styles.validButton : styles.invalidButton}>
-        <TouchableOpacity>
+      <View style={styles.buttonContainer}>
+        <TouchableOpacity
+          style={res ? styles.validButton : styles.invalidButton}
+          onPress={() => handleSelectPress(selectedMenus)}
+        >
           <Text style={styles.buttonText}>메뉴추천받기</Text>
         </TouchableOpacity>
       </View>
@@ -35,8 +41,7 @@ const Select = ({ menuButtons }) => {
 
 const styles = StyleSheet.create({
   selectContainer: {
-    flex: 1,
-    width: width * 0.6
+    flex: 1
   },
   textContainer: {
     flex: 1,
@@ -46,10 +51,14 @@ const styles = StyleSheet.create({
     fontSize: 30
   },
   selected: {
-    fontSize: 29,
+    fontSize: 20,
     color: "#FF9800",
     marginTop: 3,
     marginBottom: 3
+  },
+  buttonContainer: {
+    flex: 1,
+    width: width * 0.6
   },
   validButton: {
     flex: 1,

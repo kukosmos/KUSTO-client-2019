@@ -6,10 +6,13 @@ const { width, height } = Dimensions.get("window");
 
 class ResultScreen extends Component {
   render() {
+    const { menus } = this.props.navigation.state.params;
+    const names = menus.reduce((a, b) => a.concat(b.name), []);
+
     return (
       <View style={styles.container}>
         <ResTitle />
-        <ResultList />
+        <ResultList names={names} />
         <ResFooter />
       </View>
     );

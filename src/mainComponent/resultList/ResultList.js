@@ -2,7 +2,8 @@ import React from "react";
 import { StyleSheet, View } from "react-native";
 import Result from "../result";
 
-const ResultList = () => {
+const ResultList = ({ names }) => {
+  console.log(names);
   return (
     <View style={styles.resultList}>
       <Result />
