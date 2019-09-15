@@ -30,7 +30,7 @@ const Select = ({ menuButtons, navigation }) => {
       <View style={styles.buttonContainer}>
         <TouchableOpacity
           style={res ? styles.validButton : styles.invalidButton}
-          onPress={() => handleSelectPress(selectedMenus)}
+          onPress={res ? () => handleSelectPress(selectedMenus) : () => {}}
         >
           <Text style={styles.buttonText}>메뉴추천받기</Text>
         </TouchableOpacity>

@@ -3,17 +3,18 @@ import { Dimensions, StyleSheet, Text, View, Image } from "react-native";
 
 const { width, height } = Dimensions.get("window");
 
-const source =
+const thumbnail =
   "https://img1.yna.co.kr/etc/inner/KR/2019/07/13/AKR20190713045100005_01_i_P2.jpg";
+const star = "https://t1.daumcdn.net/cfile/tistory/24555E4E530F37470C";
 
-const Result = () => {
+const Result = ({ res }) => {
   return (
     <View style={styles.container}>
-      <Image style={styles.thumbnail} source={{ uri: source }} />
-      <Text style={styles.title}>무르무르</Text>
+      <Image style={styles.thumbnail} source={{ uri: thumbnail }} />
+      <Text style={styles.title}>{res.restaurant}</Text>
       <View style={styles.score}>
-        <Image style={styles.star} source={{ uri: source }} />
-        <Text style={styles.rate}>4.5</Text>
+        <Image style={styles.star} source={{ uri: star }} />
+        <Text style={styles.rate}>{res.rating}</Text>
       </View>
     </View>
   );
@@ -32,14 +33,14 @@ const styles = StyleSheet.create({
     justifyContent: "center"
   },
   thumbnail: {
-    flex: 2,
+    flex: 1,
     width: width * 0.15,
     height: height * 0.18,
     marginLeft: 10
   },
   title: {
-    flex: 2,
-    fontSize: 50,
+    flex: 1,
+    fontSize: 40,
     color: "#aaaaaa",
     marginLeft: width * 0.05
   },
@@ -48,8 +49,11 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center"
   },
-  star: {},
-  rate: {}
+  star: {
+    width: width * 0.06,
+    height: width * 0.06
+  },
+  rate: { fontSize: 30 }
 });
 
 export default Result;

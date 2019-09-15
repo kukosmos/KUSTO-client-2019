@@ -1,19 +1,26 @@
 import React from "react";
-import { StyleSheet, View } from "react-native";
+import { StyleSheet, View, Text } from "react-native";
 import Result from "../result";
 
-const ResultList = ({ names }) => {
-  console.log(names);
+const ResultList = ({ ress }) => {
   return (
     <View style={styles.resultList}>
-      <Result />
-      <Result />
-      <Result />
+      {ress.map(res => (
+        <Result key={res.restaurant} res={res} />
+      ))}
     </View>
   );
 };
 
 const styles = StyleSheet.create({
+  load: {
+    alignItems: "center",
+    justifyContent: "center",
+    fontSize: 50
+  },
+  loadText: {
+    fontSize: 50
+  },
   resultList: {
     flex: 1,
     alignItems: "center",
