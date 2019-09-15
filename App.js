@@ -5,10 +5,18 @@ import { createAppContainer } from "react-navigation";
 
 const MainNavigator = createStackNavigator({
   Main: {
-    screen: HomeScreen
+    screen: HomeScreen,
+    navigationOptions: {
+      title: "Home",
+      header: null
+    }
   },
   Result: {
-    screen: ResultScreen
+    screen: ResultScreen,
+    navigationOptions: {
+      title: "Result",
+      header: null
+    }
   }
 });
 

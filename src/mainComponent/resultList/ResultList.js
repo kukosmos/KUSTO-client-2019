@@ -1,6 +1,8 @@
 import React from "react";
-import { StyleSheet, View, Text } from "react-native";
+import { Dimensions, StyleSheet, View } from "react-native";
 import Result from "../result";
+
+const { width, height } = Dimensions.get("window");
 
 const ResultList = ({ ress }) => {
   return (
@@ -16,10 +18,10 @@ const styles = StyleSheet.create({
   load: {
     alignItems: "center",
     justifyContent: "center",
-    fontSize: 50
+    fontSize: width * 0.05
   },
   loadText: {
-    fontSize: 50
+    fontSize: width * 0.05
   },
   resultList: {
     flex: 1,

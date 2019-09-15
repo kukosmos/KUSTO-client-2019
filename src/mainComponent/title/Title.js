@@ -1,5 +1,7 @@
 import React from "react";
-import { StyleSheet, View, Text } from "react-native";
+import { Dimensions, StyleSheet, View, Text } from "react-native";
+
+const { width, height } = Dimensions.get("window");
 
 const Title = () => {
   return (
@@ -16,7 +18,7 @@ const styles = StyleSheet.create({
     justifyContent: "center"
   },
   title: {
-    fontSize: 50
+    fontSize: width * 0.06
   }
 });
 

@@ -6,7 +6,7 @@ const { width, height } = Dimensions.get("window");
 const ResFooter = () => {
   return (
     <View style={styles.container}>
-      <Text style={styles.footer}>를 원하는군요!</Text>
+      <Text style={styles.footer}>를 원하는 것 같아요!</Text>
       <Text style={styles.yesorno}>아님말고..</Text>
     </View>
   );
@@ -19,11 +19,11 @@ const styles = StyleSheet.create({
     justifyContent: "center"
   },
   footer: {
-    fontSize: 50,
+    fontSize: width * 0.06,
     marginBottom: 5
   },
   yesorno: {
-    fontSize: 15,
+    fontSize: width * 0.025,
     color: "gray"
   }
 });

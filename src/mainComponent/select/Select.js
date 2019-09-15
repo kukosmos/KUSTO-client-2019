@@ -48,10 +48,10 @@ const styles = StyleSheet.create({
     alignItems: "center"
   },
   text: {
-    fontSize: 30
+    fontSize: width * 0.04
   },
   selected: {
-    fontSize: 20,
+    fontSize: width * 0.026,
     color: "#FF9800",
     marginTop: 3,
     marginBottom: 3
@@ -78,7 +78,7 @@ const styles = StyleSheet.create({
   },
   buttonText: {
     color: "white",
-    fontSize: 50
+    fontSize: width * 0.06
   }
 });
 

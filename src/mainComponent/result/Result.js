@@ -40,7 +40,7 @@ const styles = StyleSheet.create({
   },
   title: {
     flex: 1,
-    fontSize: 40,
+    fontSize: width * 0.04,
     color: "#aaaaaa",
     marginLeft: width * 0.05
   },
@@ -53,7 +53,7 @@ const styles = StyleSheet.create({
     width: width * 0.06,
     height: width * 0.06
   },
-  rate: { fontSize: 30 }
+  rate: { fontSize: width * 0.04 }
 });
 
 export default Result;
