@@ -76,6 +76,14 @@ class ResultScreen extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1
+  },
+  load: {
+    alignItems: "center",
+    justifyContent: "center",
+    fontSize: width * 0.05
+  },
+  loadText: {
+    fontSize: width * 0.05
   }
 });
 

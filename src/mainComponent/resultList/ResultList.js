@@ -15,14 +15,6 @@ const ResultList = ({ ress }) => {
 };
 
 const styles = StyleSheet.create({
-  load: {
-    alignItems: "center",
-    justifyContent: "center",
-    fontSize: width * 0.05
-  },
-  loadText: {
-    fontSize: width * 0.05
-  },
   resultList: {
     flex: 1,
     alignItems: "center",
