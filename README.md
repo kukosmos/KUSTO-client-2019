@@ -4,11 +4,11 @@ Restaurant recommandation application for KU
 ## Clone
 via https
 ```
-$ git clone https://github.com/kukosmos/android-app-client-2019.git
+$ git clone https://github.com/kukosmos/KUSTO-client-2019.git
 ```
 via ssh
 ```
-$ git clone git@github.com:kukosmos/android-app-client-2019.git
+$ git clone git@github.com:kukosmos/KUSTO-client-2019.git
 ```
 
 ## Requirment
