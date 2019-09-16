@@ -28,4 +28,4 @@ $ expo start
 ```
 
 ## Download
-You can download application on here[https://expo.io/artifacts/711fa733-088f-4624-ae47-69c86eb0773d]
+You can download application on [here](https://expo.io/artifacts/711fa733-088f-4624-ae47-69c86eb0773d)
